@@ -4,6 +4,7 @@ require 'yaml'
 require 'httparty'
 
 module ZenPush
+
   class Zendesk
     include HTTParty
 
@@ -150,7 +151,7 @@ module ZenPush
       self.post("/topics.json",
                 options.merge(
                   :body => { :topic => {
-                    :forum_id => forum_id, :title => title, :body => body
+                    :forum_id => forum_id, :title => title, :body => body, :tags => $meta["tags"] || []
                   } }.to_json
                 )
       )['topic']
@@ -160,7 +161,7 @@ module ZenPush
     def put_topic(id, body, options = { })
       self.put("/topics/#{id}.json",
                options.merge(
-                 :body => { :topic => { :body => body } }.to_json
+                 :body => { :topic => { :body => body, :tags => $meta["tags"] || [] } }.to_json
                )
       )['topic']
     end

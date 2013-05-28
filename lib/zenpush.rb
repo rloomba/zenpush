@@ -24,7 +24,11 @@ module ZenPush
     topic_name = File.basename(parts[-1], file_extension)
     forum_name = parts[-2]
     category_name = parts[-3]
+    # category_name = params[:category_name]
+    # forum_name    = params[:forum_name]
+    # topic_name    = params[:topic_name]
 
     return category_name, forum_name, topic_name
   end
 end
+

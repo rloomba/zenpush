@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zenpush (0.2.0)
+    zenpush (0.3.0)
       awesome_print (~> 1.0.0)
       boson (~> 1.0)
       httparty (~> 0.8.0)
@@ -19,7 +19,7 @@ GEM
       multi_xml
     json_pure (1.5.5)
       spruz (~> 0.2.8)
-    multi_json (1.6.1)
+    multi_json (1.7.4)
     multi_xml (0.5.3)
     posix-spawn (0.3.6)
     pygments.rb (0.4.2)
