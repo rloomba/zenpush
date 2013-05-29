@@ -151,7 +151,7 @@ module ZenPush
       self.post("/topics.json",
                 options.merge(
                   :body => { :topic => {
-                    :forum_id => forum_id, :title => title, :body => body, :tags => $meta["tags"] || []
+                    :forum_id => forum_id, :title => $meta['title'], :body => body, :tags => $meta['tags'] || []
                   } }.to_json
                 )
       )['topic']
