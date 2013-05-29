@@ -4,7 +4,6 @@ subdir_list = Dir["*"].reject { |o| not File.directory?(o) }
 IGNORE = ['.', '..', '.DS_Store']
 
 subdir_list.each do |category|
-  next if category == "Developer" || category == "Support"
   Dir.chdir("./#{category}")
   dir_contents = Dir.entries(Dir.pwd)
   dir_contents.reject! { |file_name| IGNORE.include?(file_name)}
