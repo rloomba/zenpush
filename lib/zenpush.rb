@@ -21,6 +21,14 @@ module ZenPush
       parts.each { |el| el.gsub!(/-/, ' ') }
     end
 
+    file_object = File.read(file)
+    meta = nil
+    if  =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
+      meta = YAML.load($1)
+    end
+
+    puts meta
+
     topic_name = File.basename(parts[-1], file_extension)
     forum_name = parts[-2]
     category_name = parts[-3]
