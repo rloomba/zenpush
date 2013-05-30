@@ -22,7 +22,7 @@ module ZenPush
         :filenames_use_dashes_instead_of_spaces => false,
       }
 
-      zenpush_yml = '../../.zenpush.yml'
+      zenpush_yml = '../../../.zenpush.yml'
 
       if File.readable?(zenpush_yml)
         zenpush_yml_opts = YAML.load_file(zenpush_yml)
