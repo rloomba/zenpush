@@ -23,13 +23,11 @@ module ZenPush
 
     file_object = File.read(file)
     meta = nil
-    if  =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
+    if file_object =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
       meta = YAML.load($1)
     end
 
-    puts meta
-
-    topic_name = File.basename(parts[-1], file_extension)
+    topic_name = meta["title"]
     forum_name = parts[-2]
     category_name = parts[-3]
     # category_name = params[:category_name]

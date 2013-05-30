@@ -27,5 +27,3 @@ Balanced optimizes for many sellers with many buyers, and facilitates the growth
 Balanced creates commerce where commerce might not exist.   It enables companies large and small the ability to integrate our fraud-stopping, escrow-friendly, PCI-compliant, payments system directly into a site.
 
 We handle all the hassle:  card authorization, escrow, fraud screening, chargeback processing, and best of all . . . payments!   No matter what size you are today, Balanced will scale with you.  Watch  your user base grow by leaps and bounds when you enable users to get paid doing what they do best.   Grow a user base's loyalty and love when get them paid directly with ACH direct deposit or even (for those very old school users) a paper check in the mail.
-
-123asdf
