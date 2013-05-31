@@ -43,6 +43,7 @@ module ZenPush
         end
 
       topic = ZenPush.z.find_topic(category_name, forum_name, topic_title)
+      puts "topic: #{topic.inspect}"
       if topic
         # UPDATE THE TOPIC
         ap ZenPush.z.put_topic(topic['id'], topic_body)

@@ -118,7 +118,9 @@ module ZenPush
     # Find topic by name, knowing the forum name and category name
     def find_topic(category_name, forum_name, topic_title, options = {})
       forum = self.find_forum(category_name, forum_name, options)
+      puts "forum: #{forum.inspect}"
       if forum
+        puts "topics from forum: #{self.topics(forum['id'], options).inspect}"
         self.topics(forum['id'], options).detect {|t| t['title'] == topic_title}
       end
     end
@@ -148,6 +150,7 @@ module ZenPush
 
     # Create a topic in the given forum id
     def post_topic(forum_id, title, body, options = { })
+      puts "post topic meta: #{$meta.inspect}"
       self.post("/topics.json",
                 options.merge(
                   :body => { :topic => {
@@ -159,6 +162,7 @@ module ZenPush
 
     # Update a topic in the given forum id
     def put_topic(id, body, options = { })
+      puts "put topic meta: #{$meta.inspect}"
       self.put("/topics/#{id}.json",
                options.merge(
                  :body => { :topic => { :body => body, :tags => $meta["tags"] || [] } }.to_json
