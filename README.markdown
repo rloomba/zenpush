@@ -82,6 +82,9 @@ appropriate CSS in your Zendesk account. Highlighting uses Pygments and any of t
 
     $ zp push -f <path_to_markdown_file> -F github
 
+### TODO/ISSUES
+    * support deleting outdated FAQ's from Zendesk
+
 ## Contributors
 
 * [nfo](https://github.com/nfo)
