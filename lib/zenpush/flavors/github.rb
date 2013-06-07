@@ -19,6 +19,12 @@ module ZenPush
         if full_document =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
           content = $' # same as $POSTMATCH
           meta = YAML.load($1)
+          if meta["category"]
+  +        category = meta["category"]
+  +        tags = meta["tags"]
+  +        tags << "help_#{category}"
+  +        meta["tags"] = tags
+  +      end
           $meta = meta # this global variable is bad
         end
         content
