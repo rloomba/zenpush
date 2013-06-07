@@ -22,7 +22,7 @@ module ZenPush
           if meta["category"]
             category = meta["category"]
             tags = meta["tags"]
-            tags << "help_#{category}"
+            tags << "help_#{category.downcase}"
             meta["tags"] = tags
           end
           $meta = meta # this global variable is bad
