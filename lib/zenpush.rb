@@ -25,6 +25,12 @@ module ZenPush
     meta = nil
     if file_object =~ /\A(---\s*\n.*?\n?)^(---\s*$\n?)/m
       meta = YAML.load($1)
+      if meta["category"]
+        category = meta["category"]
+        tags = meta["tags"]
+        tags << "help_#{category}"
+        meta["tags"] = tags
+      end
     end
 
     topic_name = meta["title"]
